@@ -2,9 +2,9 @@ declare
 i number:=1;
 begin
     for i in 1..5
-    loop
-        dbms_output.put_line(i);
-    end loop;
+        loop
+            dbms_output.put_line(i);
+        end loop;
     dbms_output.put_line(
      'final value of i:' || i
     );

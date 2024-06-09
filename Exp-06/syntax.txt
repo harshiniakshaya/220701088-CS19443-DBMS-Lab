@@ -3,7 +3,7 @@ SYSDATE
 ---------
 09-JUN-24
 
-SQL> select to_char(sysdate) from dual;
+SQL> select to_char(sysdate) from dual; 
 TO_CHAR(SYSDATE)
 ------------------
 09-JUN-24

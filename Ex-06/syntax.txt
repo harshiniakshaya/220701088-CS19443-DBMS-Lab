@@ -1,0 +1,34 @@
+SQL> select sysdate from dual;
+SYSDATE
+---------
+09-JUN-24
+
+SQL> select to_char(sysdate) from dual;
+TO_CHAR(SYSDATE)
+------------------
+09-JUN-24
+
+SQL> select to_char(sysdate,'day') as day from dual;
+DAY
+------------------------------------
+sunday
+
+SQL> select to_char(sysdate,'day" of "month') as day from dual;
+DAY
+----------------------------------------------------------------------------
+sunday    of june
+
+SQL> select to_char(sysdate,'day" of "month" of "year') as day from dual;
+DAY
+--------------------------------------------------------------------------------
+sunday    of june      of twenty twenty-four
+
+SQL> select to_char(sysdate,'day" of "month" of "yyyy') as day from dual;
+DAY
+--------------------------------------------------------------------------------
+sunday    of june      of 2024
+
+SQL> select to_char(sysdate,'dd" of "mm" of "yyyy') as day from dual;
+DAY
+----------------
+09 of 06 of 2024

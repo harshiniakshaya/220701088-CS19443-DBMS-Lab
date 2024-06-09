@@ -1,0 +1,52 @@
+create table teacher(id number, name varchar(20), doj date, salary number,constraint t_id_pk primary key(id));
+desc teacher;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                        NOT NULL NUMBER
+ NAME                                               VARCHAR2(20)
+ DOJ                                                DATE
+ SALARY                                             NUMBER
+
+--ALTER TABLE table_name DROP CONSTRAINT constraint_name;
+alter table teacher drop constraint t_id_pk;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER
+ NAME                                               VARCHAR2(20)
+ DOJ                                                DATE
+ SALARY                                             NUMBER
+
+alter table teacher add constraint t_id_pk primary key(id);
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                        NOT NULL NUMBER
+ NAME                                               VARCHAR2(20)
+ DOJ                                                DATE
+ SALARY                                             NUMBER
+
+alter table teacher add constraint min_sal check(salary>10000);
+
+insert into teacher values(101,'jack', '07-dec-1994',5000)
+check constraint (SYSTEM.MIN_SAL) violated
+
+insert into teacher values(101,'jack', '07-dec-1994',15000);
+
+desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROLLNO                                    NOT NULL NUMBER
+ FNAME                                              VARCHAR2(10)
+ LNAME                                              VARCHAR2(10)
+ DOB                                                DATE
+ DATE_OF_JOIN                                       DATE
+ T_ID                                               NUMBER
+
+desc teacher;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                        NOT NULL NUMBER
+ NAME                                               VARCHAR2(20)
+ DOJ                                                DATE
+ SALARY                                             NUMBER
+
+alter table student add constraint fk foreign key(t_id) references teacher(id);

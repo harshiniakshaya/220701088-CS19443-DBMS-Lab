@@ -1,0 +1,52 @@
+= , > , < , >= , <= , <> 
+between, and , or , in() , not in()
+
+select * from teacher where name like 'j%';
+
+        ID NAME                 DOJ           SALARY
+---------- -------------------- --------- ----------
+       101 jack                 07-DEC-94      15000
+
+select * from teacher where name like '%a%';
+
+        ID NAME                 DOJ           SALARY
+---------- -------------------- --------- ----------
+       101 jack                 07-DEC-94      15000
+       102 kay                  05-AUG-96      18500
+       103 lisa                 14-OCT-91      25000
+       104 ray                  21-NOV-97      11000
+       105 alex                 28-SEP-96      16000
+
+select * from teacher where name like '%k%';
+
+        ID NAME                 DOJ           SALARY
+---------- -------------------- --------- ----------
+       101 jack                 07-DEC-94      15000
+       102 kay                  05-AUG-96      18500
+
+select * from teacher where name like '__y';
+
+        ID NAME                 DOJ           SALARY
+---------- -------------------- --------- ----------
+       102 kay                  05-AUG-96      18500
+       104 ray                  21-NOV-97      11000    
+
+select * from teacher order by salary desc;
+
+        ID NAME                 DOJ           SALARY
+---------- -------------------- --------- ----------
+       103 lisa                 14-OCT-91      25000
+       102 kay                  05-AUG-96      18500
+       105 alex                 28-SEP-96      16000
+       101 jack                 07-DEC-94      15000
+       104 ray                  21-NOV-97      11000
+
+select * from teacher order by salary asc;
+
+        ID NAME                 DOJ           SALARY
+---------- -------------------- --------- ----------
+       104 ray                  21-NOV-97      11000
+       101 jack                 07-DEC-94      15000
+       105 alex                 28-SEP-96      16000
+       102 kay                  05-AUG-96      18500
+       103 lisa                 14-OCT-91      25000       

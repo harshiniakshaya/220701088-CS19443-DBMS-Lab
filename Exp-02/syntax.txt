@@ -1,0 +1,26 @@
+create table student(rollno number, fname varchar(10),lname varchar(10),dob date, date_of_join date);
+
+insert into student values(1,'anu','sharma','02-feb-1995',sysdate);
+    ROLLNO FNAME      LNAME      DOB       DATE_OF_J
+---------- ---------- ---------- --------- ---------
+         1 sid        sharma     02-FEB-95 09-JUN-24
+
+update student set dob='02-july-1995' where rollno=1;
+    ROLLNO FNAME      LNAME      DOB       DATE_OF_J
+---------- ---------- ---------- --------- ---------
+         1 sid        sharma     02-JUL-95 09-JUN-24
+
+select rollno,fname||' '||lname as name, date_of_join as doj from student;    
+    ROLLNO NAME                  DOJ
+---------- --------------------- ---------
+         1 sid sharma            09-JUN-24'
+
+select rollno,fname||' '||substr(lname,1,1) as name, date_of_join as doj from student;
+    ROLLNO NAME            DOJ
+---------- --------------- ---------
+         1 sid s           09-JUN-24
+         
+select rollno,fname||' '||substr(lname,1,3) as name, date_of_join as doj from student;
+    ROLLNO NAME                    DOJ
+---------- ----------------------- ---------
+         1 sid sha                 09-JUN-24

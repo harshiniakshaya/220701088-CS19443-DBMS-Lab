@@ -1,0 +1,35 @@
+select * from teacher;
+        ID NAME                 DOJ           SALARY
+---------- -------------------- --------- ----------
+       101 jack                 07-DEC-94      15000
+       102 kay                  05-AUG-96      18500
+       103 lisa                 14-OCT-91      25000
+       104 ray                  21-NOV-97      11000
+       105 alex                 28-SEP-96      16000
+
+select id,name,doj,salary,0.1*salary as bonus,salary*0.1+salary as total_salary from teacher;
+        ID NAME                 DOJ           SALARY      BONUS TOTAL_SALARY
+---------- -------------------- --------- ---------- ---------- ------------
+       101 jack                 07-DEC-94      15000       1500        16500
+       102 kay                  05-AUG-96      18500       1850        20350
+       103 lisa                 14-OCT-91      25000       2500        27500
+       104 ray                  21-NOV-97      11000       1100        12100
+       105 alex                 28-SEP-96      16000       1600        17600
+
+select * from student;    
+    ROLLNO FNAME      LNAME      DOB             T_ID
+---------- ---------- ---------- --------- ----------
+         1 sid        sharma     02-JUL-05        101
+         2 ria        patel      07-MAY-04        101
+         3 arjun      singh      14-APR-05        104
+         4 priya      sharma     16-DEC-05        102
+         5 rohan      gupta      30-JAN-04        105
+
+select s.rollno,s.fname||' '||s.lname as name,t.name as "TEACHER NAME" from student s, teacher t where s.t_id=t.id;
+    ROLLNO NAME                  TEACHER NAME
+---------- --------------------- --------------------
+         1 sid sharma            jack
+         2 ria patel             jack
+         3 arjun singh           ray
+         4 priya sharma          kay
+         5 rohan gupta           alex

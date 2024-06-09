@@ -1,0 +1,26 @@
+create table student(name varchar2(20), age number, marks1 number, mark2 number, marks3 number);
+
+desc student;
+
+alter table student add (dob date);
+
+alter table student drop column age;
+
+alter table student modify name varchar(10);
+
+rename student to stud;
+
+insert into stud values('harshini',88,91,85,to_date('2005-05-13','yyyy-mm-dd'));
+NAME           MARKS1      MARK2     MARKS3 DOB
+---------- ---------- ---------- ---------- ---------
+harshini           88         91         85 13-MAY-05
+
+insert into stud values('akshaya',85,95,81,'13-may-2005');
+NAME           MARKS1      MARK2     MARKS3 DOB
+---------- ---------- ---------- ---------- ---------
+harshini           88         91         85 13-MAY-05
+akshaya            85         95         81 13-MAY-05
+
+truncate table stud;
+
+drop table stud;

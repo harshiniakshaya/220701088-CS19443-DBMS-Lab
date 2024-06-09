@@ -1,0 +1,4 @@
+inner join
+left join
+right join
+subqueries

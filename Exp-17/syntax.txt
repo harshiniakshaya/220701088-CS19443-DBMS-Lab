@@ -1,0 +1,20 @@
+PROCEDURE:
+create or replace procedure procedure_name
+(parameter_name in/out datatype/table.column%type)
+is
+  variable datatype;
+begin
+  statements;
+end;
+/
+
+FUNCTION:
+create or replace function function_name(parameter_name datatype)
+return datatype
+is
+  variable datatype;
+begin
+  statements;
+  return variable;
+end;
+/

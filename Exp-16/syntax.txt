@@ -1,0 +1,23 @@
+PLSQL PROGRAMS:
+1. IF ELSE
+2. FETCHING DATA FROM A TABLE
+3. UPDATE DATA OF A TABLE 
+4. USING LIKE OPERATORS
+5. GREATEST OF TWO NUMBERS
+6. CHECK FOR CONDITIONS INSIDE A TABLE
+7. DISPLAY CONTENTS OF A TABLE
+
+SYNTAX: SIMPLE IF-ELSIF-ELSE
+declare 
+  variable datatype;
+begin
+  variable:=&variable; //to get input from the user
+  if(condition) then
+    statements;
+  elsif(condition) then
+    statements;
+  else
+    statements;
+  end if;
+end;
+/
